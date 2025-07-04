@@ -1,5 +1,7 @@
 import Navbar from "./components/navbar" ; 
-import Center from "./components/center" ; 
+import Center from "./components/center" ;
+import Counter from "./components/counter" ;
+
 import "./App.css"
 
 function App() {
@@ -8,6 +10,7 @@ function App() {
     <>
       <Navbar/>
       <Center />
+      <Counter />
     </>
   )
 }
