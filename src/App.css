@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+}
+
+#Nav-bar {
+  gap: 18%;
+  width: 100%;
+  height: 90px;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+#logo #pi {
+  width: 30px;
+  height: 30px;
+  fill: yellow;
+}
+
+#logo #pi:hover{
+  transform: scale3d(1.5 , 1.5 , 1);
+  transition: transform 0.3s ease;
+}
+
+#logo h2 {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+}
+
+#nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 20px;
+  color: #cfd8dc;
+  cursor: pointer;
+  transition: color 0.2s;
+  gap: 10px;
+}
+
+.nav-item:hover {
+  color: orange;
+}
+
+.nav-item svg {
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.fancy-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 9999px;
+  background: linear-gradient(to top right, black, grey);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(136, 134, 135, 0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fancy-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 24px rgba(136, 134, 135, 0.5);
+}
+
+
+#center-container {
+  margin-top: 7%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+}
+
+#center-container-bar {
+  font-size: 25px;
+  background-color: #4169E1;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+#center-content {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+}
+
+.faang{
+  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+#center-item {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 900;
+  color: #DADADA;
+  font-size: 70px;
+  letter-spacing: 2px;
+}
+
+#center-content-2{
+  text-align: center;
+  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: 500;
+  gap: 5px;
+  padding: 10px;
+}
+
+#c1{
+  gap: 10%;;
+}
+#c2  {
+  color: #DADADA;
+}
+#c3  {
+  color: #DADADA;
+}
+#imp{
+  color: #6495ED;
+}
+#algo{
+  color: #3CB371;
+}
+#alg{
+  color: #FEBE10;
+}
+
+.button-container{
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  gap: 20px;
+  /* width: %; */
+}
+
+.solve-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #6d8ce4, #3b82f6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.solve-btn:hover {
+  background: linear-gradient(to right, #5a7bd1, #2563eb);
+   transform: scale(1.05);
+  box-shadow: 0 6px 24px rgba(136, 134, 135, 0.5);
+}
+
+.solve-btn .chevron {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.solve-btn:hover .chevron {
+  transform: translateX(4px);
+}
+
+
+.challenges-button{
+ display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border: #242424 solid 2px;
+}
+
+.challenges-button:hover {
+  background: #39464e ;
+   transform: scale(1.05);
+  box-shadow: 0 6px 24px rgba(136, 134, 135, 0.5);
+}
+
+.challenges-button .chevron {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.challenges-button:hover .chevron {
+  transform: translateX(4px);
+}
