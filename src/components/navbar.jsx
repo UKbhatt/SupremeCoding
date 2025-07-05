@@ -1,8 +1,14 @@
 import "../App.css" ; 
 import { FaCode, FaDatabase, FaBolt, FaProjectDiagram } from "react-icons/fa";
 import { PiCrown } from "react-icons/pi";
-
+import { useNavigate } from 'react-router-dom';
 export default function Navbar() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/SignUp');
+  };
+  
   return (
     <div id="Nav-bar">
       <div id="logo">
@@ -28,7 +34,7 @@ export default function Navbar() {
         </div>
       </div>
       <div className="app-container">
-      <button className="fancy-button">Sign-In</button>
+      <button className="fancy-button" onClick={handleClick}>Sign-In</button>
     </div>
     </div>
   );

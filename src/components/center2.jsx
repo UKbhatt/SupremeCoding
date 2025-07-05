@@ -34,6 +34,20 @@ export default function Center2() {
                     <span>$ view --challenges</span>
                 </button>
             </div>
+             <div className="inline-code-highlights">
+      <div className="code-item">
+        <span className="dot green" />
+        <code>no_credit_card_required = true;</code>
+      </div>
+      <div className="code-item">
+        <span className="dot blue" />
+        <code>free_problems.length === 100;</code>
+      </div>
+      <div className="code-item">
+        <span className="dot purple" />
+        <code>canUpgrade = "anytime";</code>
+      </div>
+    </div>
         </div>
     )
 }
