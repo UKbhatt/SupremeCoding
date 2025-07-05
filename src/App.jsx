@@ -2,6 +2,7 @@ import Navbar from "./components/navbar";
 import Center from "./components/center";
 import Counter from "./components/counter";
 import FeatureCards from "./components/FreatureCards";
+import Center2 from "./components/center2";
 import "./App.css" ; 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         </h5>
       </div>
       <FeatureCards />
+      <Center2/>
     </>
   )
 }
