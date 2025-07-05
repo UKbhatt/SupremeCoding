@@ -1,4 +1,4 @@
-import "../App.css" ; 
+import "../App.css";
 import { FaCode, FaDatabase, FaBolt, FaProjectDiagram } from "react-icons/fa";
 import { PiCrown } from "react-icons/pi";
 import { useNavigate } from 'react-router-dom';
@@ -8,11 +8,11 @@ export default function Navbar() {
   const handleClick = () => {
     navigate('/SignUp');
   };
-  
+  // const navigate = useNavigate();
   return (
     <div id="Nav-bar">
-      <div id="logo">
-        <PiCrown id="pi"/>
+      <div id="logo" onClick={() => navigate('/')} >
+        <PiCrown id="pi" />
         <h2>Supreme Coding</h2>
       </div>
       <div id="nav-links">
@@ -34,8 +34,8 @@ export default function Navbar() {
         </div>
       </div>
       <div className="app-container">
-      <button className="fancy-button" onClick={handleClick}>Sign-In</button>
-    </div>
+        <button className="fancy-button" onClick={handleClick}>Sign-In</button>
+      </div>
     </div>
   );
 }

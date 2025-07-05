@@ -27,6 +27,7 @@ body {
   flex-direction: row;
   align-items: center;
   gap: 5px;
+  cursor:pointer;
 }
 
 #logo #pi {
@@ -738,3 +739,65 @@ body {
   font-family: monospace;
   color: #94a3b8;
 }
+
+/* SignUp page */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+
+}
+
+.signup-form {
+  background-color: #1e1e1e;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  color: white;
+}
+
+.signup-form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.signup-form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.signup-form button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.signup-form button:hover {
+  background-color: #2563eb;
+}
+
+.signin-link {
+  font-size: 13px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.signin-link span {
+  color: #60a5fa;
+  cursor: pointer;
+}
+
