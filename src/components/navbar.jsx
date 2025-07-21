@@ -8,7 +8,6 @@ export default function Navbar() {
   const handleClick = () => {
     navigate('/SignUp');
   };
-  // const navigate = useNavigate();
   return (
     <div id="Nav-bar">
       <div id="logo" onClick={() => navigate('/')} >

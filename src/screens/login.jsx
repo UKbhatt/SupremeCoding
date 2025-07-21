@@ -26,7 +26,6 @@ export default function Login() {
 
         console.log('Logining In with:', formData);
         alert('Login successful!');
-
         navigate('/');
 
     }
