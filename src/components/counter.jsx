@@ -2,18 +2,18 @@ import "../App.css";
 
 export default function Counter() {
   return (
-    <div className="counter-container">
-      <div className="counter-item">
-        <div className="counter-number">3500+</div>
-        <span className="counter-label">Algorithmic Problems</span>
+    <div className="mt-5 w-full bg-[#0f0f0f] flex justify-center items-center gap-24 text-center flex-wrap">
+      <div className="flex flex-col items-center font-mono">
+        <div className="text-4xl font-bold text-blue-500">3500+</div>
+        <span className="mt-2 text-base font-normal text-blue-300 leading-snug">Algorithmic Problems</span>
       </div>
-      <div className="counter-item">
-        <div className="counter-number">97%</div>
-        <span className="counter-label">FAANG Success Rate</span>
+      <div className="flex flex-col items-center font-mono">
+        <div className="text-4xl font-bold text-blue-500">97%</div>
+        <span className="mt-2 text-base font-normal text-blue-300 leading-snug">FAANG Success Rate</span>
       </div>
-      <div className="counter-item">
-        <div className="counter-number">50+</div>
-        <span className="counter-label">Daily or Weekly Coding<br />Challenges</span>
+      <div className="flex flex-col items-center font-mono">
+        <div className="text-4xl font-bold text-blue-500">50+</div>
+        <span className="mt-2 text-base font-normal text-blue-300 leading-snug">Daily or Weekly Coding<br />Challenges</span>
       </div>
     </div>
   );
