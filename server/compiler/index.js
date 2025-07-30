@@ -68,7 +68,12 @@ async function customCompile(code, language, input = "") {
     const output = await execPromise(runCmd);
     return output.trim();
   } finally {
-    await fs.rm(tempDir, { recursive: true, force: true });
+    try {
+      await fs.rm(tempDir, { recursive: true, force: true });
+      console.log("✅ Temp directory deleted:", tempDir);
+    } catch (err) {
+      console.error("❌ Failed to delete temp directory:", err.message);
+    }
   }
 }
 

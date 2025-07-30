@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Play, RotateCcw, Copy, CheckCircle, XCircle, Clock, Code2 } from "lucide-react";
-import SimpleNav from "../components/simpleNav";
+import { Play, RotateCcw, Copy, CheckCircle, XCircle, Clock, Code2, LoaderCircle, Plus } from "lucide-react";
+ import SimpleNav from "../components/simpleNav";
 import { toast } from "react-hot-toast";
+
 
 export default function SolutionScreen() {
     const { slug } = useParams();
@@ -75,7 +76,7 @@ export default function SolutionScreen() {
                     body: JSON.stringify({
                         code,
                         language,
-                        input: testCase.input, 
+                        input: testCase.input,
                     }),
                 });
 
@@ -211,7 +212,7 @@ export default function SolutionScreen() {
                     <div className="mt-6">
                         <h3 className="font-semibold mb-2">Examples:</h3>
                         {question.sampleInput.map((input, i) => (
-                            <div key={i} className="bg-gray-900 p-3 rounded mb-4">
+                            <div key={i} className="bg-gray-800 p-3 rounded mb-4">
                                 <p className="text-slate-400 text-sm">Input:</p>
                                 <pre className="text-slate-100">{input}</pre>
                                 <p className="text-slate-400 text-sm mt-2">Output:</p>
@@ -254,13 +255,67 @@ export default function SolutionScreen() {
                     <textarea
                         value={code}
                         onChange={(e) => setCode(e.target.value)}
-                        className="flex-1 bg-[#0f0f0f] text-white p-4 rounded font-mono text-sm resize-none"
+                        onKeyDown={(e) => {
+                            const textarea = e.target;
+                            const lines = code.split("\n");
+                            const start = textarea.selectionStart;
+                            const end = textarea.selectionEnd;
+                            if (e.ctrlKey && e.key === "/") {
+                                e.preventDefault();
+                                const startLineIndex = code.substring(0, start).split("\n").length - 1;
+                                lines[startLineIndex] = lines[startLineIndex].startsWith("//")
+                                    ? lines[startLineIndex].replace(/^\/\//, "")
+                                    : `//${lines[startLineIndex]}`;
+                                setCode(lines.join("\n"));
+                            }
+                            if (e.key === "Tab") {
+                                e.preventDefault();
+                                const before = code.substring(0, start);
+                                const after = code.substring(end);
+                                setCode(`${before}  ${after}`);
+                                setTimeout(() => {
+                                    textarea.selectionStart = textarea.selectionEnd = start + 2;
+                                });
+                            }
+                            if (e.altKey && (e.key === "ArrowUp" || e.key === "ArrowDown")) {
+                                e.preventDefault();
+                                const cursorLine = code.substring(0, start).split("\n").length - 1;
+                                const targetLine = e.key === "ArrowUp" ? cursorLine - 1 : cursorLine + 1;
+
+                                if (targetLine < 0 || targetLine >= lines.length) return;
+
+                                const temp = lines[cursorLine];
+                                lines[cursorLine] = lines[targetLine];
+                                lines[targetLine] = temp;
+
+                                setCode(lines.join("\n"));
+                            }
+                            if (e.altKey && e.shiftKey && (e.key === "ArrowUp" || e.key === "ArrowDown")) {
+                                e.preventDefault();
+
+                                const lines = code.split("\n");
+                                const cursorStart = e.target.selectionStart;
+                                const cursorLine = code.substring(0, cursorStart).split("\n").length - 1;
+
+                                let newLines = [...lines];
+
+                                if (e.key === "ArrowUp" && cursorLine > 0) {
+                                    newLines.splice(cursorLine - 1, 0, lines[cursorLine]); 
+                                } else if (e.key === "ArrowDown" && cursorLine < lines.length - 1) {
+                                    newLines.splice(cursorLine + 1, 0, lines[cursorLine]); 
+                                }
+
+                                setCode(newLines.join("\n"));
+                            }
+                        }}
+                        className="flex-1 bg-[#0f0f0f] text-white p-4 rounded font-mono text-sm resize-none scroll-m-0.5"
                     />
+
                     <div className="flex mt-3 space-x-4">
                         <button
                             onClick={runTestCases}
                             disabled={isRunning}
-                            className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-sm"
+                            className="border-2 border-green-600 hover:bg-green-700 px-4 py-2 rounded-full text-sm"
                         >
                             <Play size={16} className="inline mr-2" />
                             Run Tests
@@ -268,11 +323,19 @@ export default function SolutionScreen() {
                         <button
                             onClick={runCustomInput}
                             disabled={isRunning}
-                            className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm"
+                            className="border-2 border-blue-600 hover:bg-blue-700 px-4 py-2 rounded-full text-sm"
                         >
-                            <Play size={16} className="inline mr-2" />
-                            Run Custom
+                            <Plus size={16} className="inline mr-2" />
+                            Add Custom Input
                         </button>
+                        {isRunning && (
+                            <div className="text-white border-2 border-gray-500 pl-0.5 flex flex-row gap-4 w-auto rounded-2xl items-center px-4 py-1">
+                                <p></p>
+                                <LoaderCircle className="h-5 w-5 text-gray-600 animate-spin" />
+                                <p>Loading...</p>
+                            </div>
+                        )}
+
                     </div>
                     <div className="mt-4 h-60 overflow-y-auto bg-slate-800 p-3 rounded text-sm">
                         {testResults.length > 0 ? (
