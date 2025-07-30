@@ -2,7 +2,7 @@
 
 <h1 align="center"><img width="50" height="50" alt="image" src="https://github.com/user-attachments/assets/f9240e44-4901-44e6-b2f0-59989957dc6a" />
 SupremeCoding</h1>
-<p align="center">An online code compiler & coding platform like LeetCode powered by a custom-built Node.js backend.</p>
+<p align="center">An online code compiler & coding platform powered by a custom-built Node.js backend.</p>
 <p align="center">
   <img src="https://img.shields.io/badge/Online%20Compiler-Built%20with%20Node.js-blue?style=for-the-badge&logo=node.js" />
   <img src="https://img.shields.io/badge/MongoDB-Questions%20Database-green?style=for-the-badge&logo=mongodb" />
