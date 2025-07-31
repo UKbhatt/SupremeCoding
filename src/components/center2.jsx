@@ -5,7 +5,7 @@ export default function Center2() {
     <div className="mt-7 flex justify-center items-center font-mono flex-col text-white px-4 text-center">
       
       <div className="text-sm bg-gray-800 px-3 py-1 rounded-full mb-4">
-        <h5>class TrustedPlatform extends AlgoLab</h5>
+        <h5>class TrustedPlatform extends Supreme-Coding</h5>
       </div>
 
       <div className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">

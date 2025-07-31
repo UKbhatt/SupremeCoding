@@ -16,7 +16,7 @@ export default function Home(){
       <Counter />
       <div className="w-full py-8 flex justify-center items-center bg-[#0f0f0f]">
   <div className="text-sm font-mono text-green-400 bg-[#1a1a1a] px-4 py-2 rounded shadow">
-    <h5>import * as features from './algolab'</h5>
+    <h5>import * as features from './supremeCoding'</h5>
   </div>
 </div>
 

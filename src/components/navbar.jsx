@@ -4,6 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 import { MdOutlinePerson } from "react-icons/md";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { FileJson2 } from 'lucide-react';
 import { useState } from "react";
 import "../App.css";
 
@@ -22,7 +23,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="w-full h-20 bg-[#1a1a1a] px-5 py-4 shadow-md">
+    <div className="w-full h-20 bg-[#1a1a1a] px-5 py-4 shadow-md ">
       <div className="flex justify-between items-center">
         <div onClick={() => navigate('/')} className="flex items-center gap-2 cursor-pointer">
           <PiCrown className="w-8 h-8 md:w-10 md:h-10 fill-yellow-400 hover:scale-125 transition-transform duration-300 ease-in-out" />
@@ -37,13 +38,9 @@ export default function Navbar() {
             <FaDatabase />
             <span className="text-xl">Sheet</span>
           </div>
-          <div className="flex items-center gap-2 hover:text-orange-400 cursor-pointer" onClick={() => handleNavClick('/contest')}>
-            <FaBolt />
-            <span className="text-xl">Contests</span>
-          </div>
-          <div className="flex items-center gap-2 hover:text-orange-400 cursor-pointer" onClick={() => handleNavClick('/discussion')}>
-            <FaProjectDiagram />
-            <span className="text-xl">Discussion</span>
+          <div className="flex items-center gap-2 hover:text-orange-400 cursor-pointer" onClick={() => handleNavClick('/roomlogin')}>
+            <FileJson2 />
+            <span className="text-xl">Real-Time Code Editor</span>
           </div>
         </div>
 
@@ -83,13 +80,9 @@ export default function Navbar() {
             <FaDatabase />
             <span>Sheet</span>
           </div>
-          <div className="flex items-center gap-2 hover:text-orange-400 cursor-pointer" onClick={() => handleNavClick('/contest')}>
-            <FaBolt />
-            <span>Contests</span>
-          </div>
-          <div className="flex items-center gap-2 hover:text-orange-400 cursor-pointer" onClick={() => handleNavClick('/discussion')}>
-            <FaProjectDiagram />
-            <span>Discussion</span>
+          <div className="flex items-center gap-2 hover:text-orange-400 cursor-pointer" onClick={() => handleNavClick('/roomlogin')}>
+            <FileJson2 />
+            <span>Real-Time Code Editor</span>
           </div>
           {!isAuthenticated && (
             <button

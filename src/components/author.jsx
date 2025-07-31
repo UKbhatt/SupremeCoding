@@ -1,6 +1,6 @@
 import { FaGithub, FaTwitter, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import '../App.css';
-import { BsHeartFill  } from "react-icons/bs";
+import { BsHeartFill } from "react-icons/bs";
 
 export default function Footer() {
   return (
@@ -12,17 +12,24 @@ export default function Footer() {
             <span>Thanks for Viewing </span>
           </div>
           <div className="text-sm text-slate-400">
-            Built with <BsHeartFill className="text-red-700 mx-1 hover:text-red-500 hover:scale-150 transition-transform duration-300"/>  by <b>Utkarsh Bhatt</b>, for developers
+            Built with <BsHeartFill className="text-red-700 mx-1 hover:text-red-500 hover:scale-150 transition-transform duration-300" />  by <b>Utkarsh Bhatt</b>, for developers
           </div>
         </div>
 
         <div className="text-right">
           <span className="connect-comment">// Connect with us</span>
           <div className="flex justify-end gap-4 mt-1.5">
-            <a className="text-slate-300 text-lg transition-colors duration-300 hover:text-blue-400" href="#"><FaGithub /></a>
-            <a className="text-slate-300 text-lg transition-colors duration-300 hover:text-blue-400" href="#"><FaTwitter /></a>
-            <a className="text-slate-300 text-lg transition-colors duration-300 hover:text-blue-400" href="#"><FaLinkedin /></a>
-            <a className="text-slate-300 text-lg transition-colors duration-300 hover:text-blue-400" href="#"><FaEnvelope /></a>
+            <a className="text-slate-300 text-lg transition-colors duration-300 hover:text-blue-400" href="https://github.com/UKbhatt"><FaGithub /></a>
+            <a className="text-slate-300 text-lg transition-colors duration-300 hover:text-blue-400" href="https://x.com/utkarsh_B2004"><FaTwitter /></a>
+            <a className="text-slate-300 text-lg transition-colors duration-300 hover:text-blue-400" href="https://www.linkedin.com/in/utkarsh-bhatt-183325261/"><FaLinkedin /></a>
+            <a
+              className="text-slate-300 text-lg transition-colors duration-300 hover:text-blue-400"
+              href="mailto:ubhatt2004@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaEnvelope />
+            </a>
           </div>
         </div>
       </div>
@@ -36,7 +43,7 @@ export default function Footer() {
           <a href="#">Cookie Policy</a>
         </div>
         <div className="pt-5 font-mono text-slate-400">
-          <code>while(coding) &#123; innovate(); &#125;</code>
+          <code>while(coding) &#123; Develop(); &#125;</code>
         </div>
       </div>
     </footer>

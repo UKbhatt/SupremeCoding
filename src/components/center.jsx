@@ -4,7 +4,7 @@ export default function Center() {
     const s = "import "
     const s11 = "{ algorithms, dataStructures, optimization } ";
     const s3 = "from ";
-    const s4 = "'algolab' "
+    const s4 = "SupremeCoding "
     const s1 = " The ultimate DSA practice platform with curated problems, live contests, and systematic "
     const s2 = "interview prep.";
 

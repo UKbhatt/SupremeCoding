@@ -2,8 +2,8 @@ export default function TrustedSection() {
   return (
     <div className="flex flex-col items-center justify-center text-center py-10 px-4 text-white font-mono">
       
-      <div className="text-sm px-4 py-1 rounded-full mb-4">
-        class TrustedPlatform extends AlgoLab
+      <div className="text-sm px-4 py-1 rounded-full mb-4 border-blue-900 border-2">
+        class TrustedPlatform extends supremeCoding
       </div>
 
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
