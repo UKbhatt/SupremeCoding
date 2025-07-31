@@ -15,10 +15,11 @@ export default function SolutionScreen() {
     const [activeTab, setActiveTab] = useState("testcases");
     const [customInput, setCustomInput] = useState("");
     const [customOutput, setCustomOutput] = useState("");
+    const baseUrl = import.meta.env.REACT_APP_API_URL ; 
 
     useEffect(() => {
         if (slug) {
-            fetch(`http://localhost:5000/questions/${slug}`)
+            fetch(`${baseUrl}/questions/${slug}`)
                 .then((res) => res.json())
                 .then((data) => {
                     if (!data.testCases && data.sampleInput && data.sampleOutput) {
@@ -70,7 +71,7 @@ export default function SolutionScreen() {
             const startTime = Date.now();
 
             try {
-                const res = await fetch("http://localhost:5000/api/compile", {
+                const res = await fetch(`${baseUrl}/api/compile`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
@@ -140,7 +141,7 @@ export default function SolutionScreen() {
         setIsRunning(true);
 
         try {
-            const res = await fetch("http://localhost:5000/api/compile", {
+            const res = await fetch(`${baseUrl}/api/compile`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

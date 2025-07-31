@@ -7,9 +7,10 @@ import "../index.css";
 export default function ProblemTable() {
     const [problems, setProblems] = useState([]);
     const navigate = useNavigate();
+    const baseUrl = import.meta.env.REACT_APP_API_URL ; 
 
     useEffect(() => {
-        fetch("http://localhost:5000/questions")
+        fetch(`${baseUrl}/questions`)
             .then((res) => res.json())
             .then((data) => setProblems(data))
             .catch((err) => console.error("Error fetching problems:", err));
