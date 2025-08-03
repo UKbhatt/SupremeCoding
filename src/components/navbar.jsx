@@ -38,7 +38,7 @@ export default function Navbar() {
             <FaDatabase />
             <span className="text-xl">Sheet</span>
           </div>
-          <div className="flex items-center gap-2 hover:text-orange-400 cursor-pointer" onClick={() => handleNavClick('/roomlogin')}>
+          <div className="flex items-center gap-2 hover:text-orange-400 cursor-pointer" onClick={() => navigate('/roomlogin')}>
             <FileJson2 />
             <span className="text-xl">Real-Time Code Editor</span>
           </div>
@@ -80,7 +80,7 @@ export default function Navbar() {
             <FaDatabase />
             <span>Sheet</span>
           </div>
-          <div className="flex items-center gap-2 hover:text-orange-400 cursor-pointer" onClick={() => handleNavClick('/roomlogin')}>
+          <div className="flex items-center gap-2 hover:text-orange-400 cursor-pointer" onClick={() => navigate('/roomlogin')}>
             <FileJson2 />
             <span>Real-Time Code Editor</span>
           </div>
